@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ClubSelect</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label>Club Selection</ion-label>
+        <ion-select [(ngModel)]="club">
+          <ion-option value="pw">Pitching Wedge</ion-option>
+          <ion-option value="sw">Sand Wedge</ion-option>
+          <ion-option value="pt">Putter</ion-option>
+        </ion-select>
+      </ion-item>
+      
+  <ion-item>
+    <ion-input autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Distance" [(ngModel)]="distnace"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-input disabled autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Angle" [(ngModel)]="angle"></ion-input>
+  </ion-item>
+
+  <button ion-button round block icon-right color="secondary" (click)="createPath()">
+      Submit to table
+      <ion-icon name="checkmark"></ion-icon>
+  </button>
+
+</ion-content>
