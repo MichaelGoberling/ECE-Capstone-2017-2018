@@ -36,7 +36,7 @@ export class BluetoothPage {
     this.ngZone.run(() => {
       this.setStatus('');
       this.peripheral = peripheral;
-      this.deviceService.setDevice(peripheral.id);
+      //this.deviceService.setDevice(peripheral.id);
       this.viewCtrl.dismiss();
     });
   }

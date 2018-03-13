@@ -29,10 +29,10 @@ export class ClubSelectPage {
     console.log('ionViewDidLoad ClubSelectPage');
   }
 
-  getAngle(){ //STILL WORKING ON THIS 
-   let device = this.deviceSerive.getDevice;
-   if this.BLE.isConnected(device);
-    this.angle
-  }
+  //getAngle(){ //STILL WORKING ON THIS 
+  // let device = this.deviceSerive.getDevice;
+  // if this.BLE.isConnected(device);
+  //  this.angle
+ // }
 
 }

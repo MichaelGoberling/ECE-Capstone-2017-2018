@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -12,7 +12,7 @@ export class DeviceProvider {
 
   currentDevice: any;
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello DeviceProvider Provider');
   }
 
