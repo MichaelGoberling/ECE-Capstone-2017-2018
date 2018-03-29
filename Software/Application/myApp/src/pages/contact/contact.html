@@ -7,27 +7,27 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
     <ion-item>
-    </ion-item>
-  </ion-list>
+        <ion-label>Club Selection</ion-label>
+        <ion-select [(ngModel)]="club" (ionChange)="filter()">
+
+          <ion-option value="pw">Pitching Wedge</ion-option>
+          <ion-option value="sw">Sand Wedge</ion-option>
+          <ion-option value="pt">Putter</ion-option>
+        </ion-select>
+      </ion-item>
+    
+      <table>
+        <tr>
+            <th>Distance</th>
+            <th>Club</th> 
+            <th>Angle</th>
+        </tr>
+        <tr *ngFor="let item of data">
+            <td>{{item.distance}}</td>
+            <td>{{item.club}}</td> 
+            <td>{{item.angle}}</td>
+        </tr>
+      </table>
 </ion-content>
 
-<ion-content>
-<ion-grid>
-  <ion-row>
-    <ion-col col-12 col-sm>
-      1 of 4
-    </ion-col>
-    <ion-col col-12 col-sm>
-      2 of 4
-    </ion-col>
-    <ion-col col-12 col-sm>
-      3 of 4
-    </ion-col>
-    <ion-col col-12 col-sm>
-      4 of 4
-    </ion-col>
-  </ion-row>
-</ion-grid>
-</ion-content>

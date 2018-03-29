@@ -13,6 +13,7 @@ import { BLE } from '@ionic-native/ble';
 import { BluetoothPage } from '../pages/bluetooth/bluetooth';
 import { ClubSelectPage } from '../pages/club-select/club-select';
 import { DeviceProvider } from '../providers/device/device';
+import { TableDataProvider } from '../providers/table-data/table-data';
 
 
 //Whenever you want to make new pages they need to go into here as well
@@ -46,7 +47,8 @@ import { DeviceProvider } from '../providers/device/device';
     BLE,
     DeviceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DeviceProvider
+    DeviceProvider,
+    TableDataProvider
   ]
 })
 export class AppModule {}

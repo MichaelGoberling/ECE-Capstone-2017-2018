@@ -19,14 +19,14 @@
       </ion-item>
       
   <ion-item>
-    <ion-input autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Distance" [(ngModel)]="distnace"></ion-input>
+    <ion-input autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Distance" [(ngModel)]="distance"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-input disabled autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Angle" [(ngModel)]="angle"></ion-input>
   </ion-item>
 
-  <button ion-button round block icon-right color="secondary" (click)="createPath()">
+  <button ion-button round block icon-right color="secondary" (click)="addData()">
       Submit to table
       <ion-icon name="checkmark"></ion-icon>
   </button>
