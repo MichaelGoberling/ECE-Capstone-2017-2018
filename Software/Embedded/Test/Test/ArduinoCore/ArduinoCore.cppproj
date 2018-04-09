@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>7e012bc3-4fe6-4b50-bf7c-ce66b9ab166f</ProjectGuid>
+    <avrdevice>atmega328p</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Name>ArduinoCore</Name>
+    <ArduinoIdeDir>C:\Program Files (x86)\Arduino</ArduinoIdeDir>
+    <ArduinoProjectType>Core</ArduinoProjectType>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AssemblyName>ArduinoCore</AssemblyName>
+    <RootNamespace>ArduinoCore</RootNamespace>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.35.1" />
+  </dependencies>
+</framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=8000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_PRO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\adafruit_gfx</Value>
+      <Value>..\include\libraries\adafruit_gfx\Fonts</Value>
+      <Value>..\include\libraries\SPI</Value>
+      <Value>..\include\libraries\adafruit_ili9341</Value>
+      <Value>..\include\libraries\adafruit_ili9341\examples\pictureEmbed</Value>
+      <Value>..\include\libraries\touchscreen</Value>
+      <Value>..\include\libraries\ChRt-master</Value>
+      <Value>..\include\libraries\ChRt-master\arm</Value>
+      <Value>..\include\libraries\ChRt-master\avr</Value>
+      <Value>..\include\libraries\ChRt-master\CMSIS\include</Value>
+      <Value>..\include\libraries\ChRt-master\rt</Value>
+      <Value>..\include\libraries\ChRt-master\sam3x</Value>
+      <Value>..\include\libraries\ChRt-master\samd</Value>
+      <Value>..\include\libraries\ChRt-master\teensy3</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+      <Value>F_CPU=8000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_PRO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\adafruit_gfx</Value>
+      <Value>..\include\libraries\adafruit_gfx\Fonts</Value>
+      <Value>..\include\libraries\SPI</Value>
+      <Value>..\include\libraries\adafruit_ili9341</Value>
+      <Value>..\include\libraries\adafruit_ili9341\examples\pictureEmbed</Value>
+      <Value>..\include\libraries\touchscreen</Value>
+      <Value>..\include\libraries\ChRt-master</Value>
+      <Value>..\include\libraries\ChRt-master\arm</Value>
+      <Value>..\include\libraries\ChRt-master\avr</Value>
+      <Value>..\include\libraries\ChRt-master\CMSIS\include</Value>
+      <Value>..\include\libraries\ChRt-master\rt</Value>
+      <Value>..\include\libraries\ChRt-master\sam3x</Value>
+      <Value>..\include\libraries\ChRt-master\samd</Value>
+      <Value>..\include\libraries\ChRt-master\teensy3</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega328p -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=8000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_PRO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\adafruit_gfx</Value>
+      <Value>..\include\libraries\adafruit_gfx\Fonts</Value>
+      <Value>..\include\libraries\SPI</Value>
+      <Value>..\include\libraries\adafruit_ili9341</Value>
+      <Value>..\include\libraries\adafruit_ili9341\examples\pictureEmbed</Value>
+      <Value>..\include\libraries\touchscreen</Value>
+      <Value>..\include\libraries\ChRt-master</Value>
+      <Value>..\include\libraries\ChRt-master\arm</Value>
+      <Value>..\include\libraries\ChRt-master\avr</Value>
+      <Value>..\include\libraries\ChRt-master\CMSIS\include</Value>
+      <Value>..\include\libraries\ChRt-master\rt</Value>
+      <Value>..\include\libraries\ChRt-master\sam3x</Value>
+      <Value>..\include\libraries\ChRt-master\samd</Value>
+      <Value>..\include\libraries\ChRt-master\teensy3</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcc.compiler.optimization.OtherFlags>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.warnings.InhibitAllWarnings>True</avrgcc.compiler.warnings.InhibitAllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -std=gnu11</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>F_CPU=8000000L</Value>
+      <Value>ARDUINO=10805</Value>
+      <Value>ARDUINO_AVR_PRO</Value>
+      <Value>ARDUINO_ARCH_AVR</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+      <Value>..\include\libraries\adafruit_gfx</Value>
+      <Value>..\include\libraries\adafruit_gfx\Fonts</Value>
+      <Value>..\include\libraries\SPI</Value>
+      <Value>..\include\libraries\adafruit_ili9341</Value>
+      <Value>..\include\libraries\adafruit_ili9341\examples\pictureEmbed</Value>
+      <Value>..\include\libraries\touchscreen</Value>
+      <Value>..\include\libraries\ChRt-master</Value>
+      <Value>..\include\libraries\ChRt-master\arm</Value>
+      <Value>..\include\libraries\ChRt-master\avr</Value>
+      <Value>..\include\libraries\ChRt-master\CMSIS\include</Value>
+      <Value>..\include\libraries\ChRt-master\rt</Value>
+      <Value>..\include\libraries\ChRt-master\sam3x</Value>
+      <Value>..\include\libraries\ChRt-master\samd</Value>
+      <Value>..\include\libraries\ChRt-master\teensy3</Value>
+      <Value>..\include\core</Value>
+      <Value>..\include\variants\eightanaloginputs</Value>
+      <Value>..\include\variants\standard</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics</avrgcccpp.compiler.optimization.OtherFlags>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.warnings.InhibitAllWarnings>True</avrgcccpp.compiler.warnings.InhibitAllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Os</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.150\include</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="include\core\Arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\binary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Client.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\HardwareSerial_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\IPAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\new.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\PluggableUSB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Printable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Stream.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\Udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBAPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\USBDesc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WCharacter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\wiring_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\core\WString.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Adafruit_GFX.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Adafruit_SPITFT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Adafruit_SPITFT_Macros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMono12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMono18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMono24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMono9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBold12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBold18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBold24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBold9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBoldOblique12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBoldOblique18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBoldOblique24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoBoldOblique9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoOblique12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoOblique18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoOblique24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeMonoOblique9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSans12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSans18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSans24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSans9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBold12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBold18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBold24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBold9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBoldOblique12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBoldOblique18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBoldOblique24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansBoldOblique9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansOblique12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansOblique18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansOblique24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSansOblique9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerif12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerif18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerif24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerif9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBold12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBold18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBold24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBold9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBoldItalic12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBoldItalic18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBoldItalic24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifBoldItalic9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifItalic12pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifItalic18pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifItalic24pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\FreeSerifItalic9pt7b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\Org_01.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\Picopixel.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\Fonts\TomThumb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_gfx\gfxfont.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_ili9341\Adafruit_ILI9341.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\adafruit_ili9341\examples\pictureEmbed\dragon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\chconf_arm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\chcore_arm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\chcore_timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\chcore_v6m.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\chcore_v7m.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\chtypes_arm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\cmparams.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\arm\mpu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\avr\chconf_avr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\avr\chcore_avr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\avr\chcore_timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\avr\chtypes_avr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\ChAvrMinSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\chconf_rt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\chcore_rt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\ChRt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\chtypes_rt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\arm_common_tables.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\arm_const_structs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\arm_math.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\cmsis_armcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\cmsis_armcc_V6.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\cmsis_gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cm0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cm0plus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cm3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cm4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cm7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cmFunc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cmInstr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_cmSimd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_sc000.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\CMSIS\include\core_sc300.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\ch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chalign.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chbsem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chchecks.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chcond.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chcustomer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chdebug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chdynamic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chevents.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chheap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chlicense.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chmboxes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chmemcore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chmempools.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chmsg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chmtx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chregistry.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chschd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chsem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chstats.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chsys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chsystypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chthreads.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chtm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chtrace.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\rt\chvt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\sam3x\cmparams_sam3x.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\samd\cmparams_samd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\ChRt-master\teensy3\cmparams_teensy3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\SPI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\libraries\touchscreen\TouchScreen.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\eightanaloginputs\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\variants\standard\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\abi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\CDC.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial0.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial1.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\HardwareSerial3.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\hooks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\IPAddress.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\new.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PluggableUSB.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\PreprocessingAssembly\wiring_pulse.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Print.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Stream.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\Tone.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_digital.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_pulse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\wiring_shift.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WMath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\core\WString.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\adafruit_gfx\Adafruit_GFX.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\adafruit_gfx\Adafruit_SPITFT.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\adafruit_gfx\fontconvert\fontconvert.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\adafruit_gfx\glcdfont.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\adafruit_ili9341\Adafruit_ILI9341.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\arm\chcore_v6m.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\arm\chcore_v7m.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\arm\chcore_v7m_asm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\avr\chcore_avr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\avr\st_lld_avr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\ChAvrMinSerial.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\ChRt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chcond.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chdebug.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chdynamic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chevents.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chheap.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chmboxes.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chmemcore.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chmempools.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chmsg.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chmtx.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chregistry.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chschd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chsem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chstats.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chsys.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chthreads.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chtm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chtrace.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\rt\chvt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\sam3x\st_lld_sam3x.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\samd\st_lld_samd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\ChRt-master\teensy3\st_lld_teenxy3.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\SPI\SPI.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\libraries\touchscreen\TouchScreen.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="include\" />
+    <Folder Include="include\core\" />
+    <Folder Include="include\libraries\" />
+    <Folder Include="include\libraries\adafruit_gfx\" />
+    <Folder Include="include\libraries\adafruit_gfx\Fonts\" />
+    <Folder Include="include\libraries\adafruit_ili9341\" />
+    <Folder Include="include\libraries\adafruit_ili9341\examples\" />
+    <Folder Include="include\libraries\adafruit_ili9341\examples\pictureEmbed\" />
+    <Folder Include="include\libraries\ChRt-master\" />
+    <Folder Include="include\libraries\ChRt-master\arm\" />
+    <Folder Include="include\libraries\ChRt-master\avr\" />
+    <Folder Include="include\libraries\ChRt-master\CMSIS\" />
+    <Folder Include="include\libraries\ChRt-master\CMSIS\include\" />
+    <Folder Include="include\libraries\ChRt-master\rt\" />
+    <Folder Include="include\libraries\ChRt-master\sam3x\" />
+    <Folder Include="include\libraries\ChRt-master\samd\" />
+    <Folder Include="include\libraries\ChRt-master\teensy3\" />
+    <Folder Include="include\libraries\SPI\" />
+    <Folder Include="include\libraries\touchscreen\" />
+    <Folder Include="include\variants\" />
+    <Folder Include="include\variants\eightanaloginputs\" />
+    <Folder Include="include\variants\standard\" />
+    <Folder Include="src\" />
+    <Folder Include="src\core\" />
+    <Folder Include="src\core\PreprocessingAssembly\" />
+    <Folder Include="src\libraries\" />
+    <Folder Include="src\libraries\adafruit_gfx\" />
+    <Folder Include="src\libraries\adafruit_gfx\fontconvert\" />
+    <Folder Include="src\libraries\adafruit_ili9341\" />
+    <Folder Include="src\libraries\ChRt-master\" />
+    <Folder Include="src\libraries\ChRt-master\arm\" />
+    <Folder Include="src\libraries\ChRt-master\avr\" />
+    <Folder Include="src\libraries\ChRt-master\rt\" />
+    <Folder Include="src\libraries\ChRt-master\sam3x\" />
+    <Folder Include="src\libraries\ChRt-master\samd\" />
+    <Folder Include="src\libraries\ChRt-master\teensy3\" />
+    <Folder Include="src\libraries\SPI\" />
+    <Folder Include="src\libraries\touchscreen\" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
