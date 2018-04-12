@@ -14,6 +14,7 @@ import { BluetoothPage } from '../pages/bluetooth/bluetooth';
 import { ClubSelectPage } from '../pages/club-select/club-select';
 import { DeviceProvider } from '../providers/device/device';
 import { TableDataProvider } from '../providers/table-data/table-data';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 
 //Whenever you want to make new pages they need to go into here as well
@@ -45,6 +46,7 @@ import { TableDataProvider } from '../providers/table-data/table-data';
     StatusBar,
     SplashScreen,
     BLE,
+    NativeStorage,
     DeviceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DeviceProvider,

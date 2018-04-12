@@ -1,3 +1,21 @@
 page-contact {
-
+    .club-table {
+        width: 100%;
+    }
+    .table-head {
+        th {
+            padding: 15px 10px;
+            background-color: #ecac00;
+        }
+    }
+    .table-rows {
+        text-align: center;
+        td {
+            padding: 10px 10px;
+            
+        }
+    }
+    .table-rows:nth-child(odd){
+        background-color: #ddd;
+    }
 }
