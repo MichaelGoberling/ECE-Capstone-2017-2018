@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { TablePage } from '../table/table';
+import { BLEconnectPage } from '../BLEconnect/BLEconnect';
 import { ClubSelectPage } from '../club-select/club-select';
 //import {BluetoothHandler} from '../home/home';
 //The above is not needed because we do not export bluetoothhandler on the home page
@@ -11,9 +9,9 @@ import { ClubSelectPage } from '../club-select/club-select';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
+  tab1Root = BLEconnectPage;
   tab2Root = ClubSelectPage;
-  tab3Root = ContactPage;
+  tab3Root = TablePage;
 
   constructor() {
 

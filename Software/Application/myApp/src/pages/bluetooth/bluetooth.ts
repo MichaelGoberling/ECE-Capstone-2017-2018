@@ -1,9 +1,11 @@
 import { Component, NgZone } from '@angular/core';
-import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, ViewController, AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 import { DeviceProvider } from '../../providers/device/device';
 
+//const ANGLE_SERVICE = '1800'
+//const ANGLE_CHARACTERISTIC = '1801';
 
 @Component({
   selector: 'page-bluetooth',
@@ -13,10 +15,12 @@ export class BluetoothPage {
 
   peripheral: any = {};
   statusMessage: string;
+  angle: any;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public viewCtrl: ViewController,
+              public alertCtrl: AlertController,
               public deviceService: DeviceProvider,
               private ble: BLE,
               private toastCtrl: ToastController,
@@ -36,9 +40,38 @@ export class BluetoothPage {
     this.ngZone.run(() => {
       this.setStatus('');
       this.peripheral = peripheral;
-      //this.deviceService.setDevice(peripheral.id);
+      
+      /*this.ble.startNotification(this.peripheral.id, ANGLE_SERVICE,ANGLE_CHARACTERISTIC).subscribe(
+        data => this.onAngleChange(data),
+        () => this.showAlert('Unexpected Error', 'Failed to subscribe for angle changes')
+      )
+
+      this.ble.read(this.peripheral.id, ANGLE_SERVICE,ANGLE_CHARACTERISTIC).then(
+        data => this.onAngleChange(data),
+        () => this.showAlert('Unexpected Error', 'Failed to get anle')
+      )
+*/
       this.viewCtrl.dismiss();
     });
+  }
+
+  /*onAngleChange(buffer:ArrayBuffer) {
+    var data = new Uint8Array(buffer);
+    console.log(data[0]);
+
+    this.ngZone.run(() => {
+      this.angle = data[0];
+    });
+  }
+*/
+
+  showAlert(title, message) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   onDeviceDisconnected(peripheral) {
@@ -49,15 +82,6 @@ export class BluetoothPage {
     });
     toast.present();
   }
-
-  // Disconnect peripheral when leaving the page
-  //ionViewWillLeave() {
-  //  console.log('ionViewWillLeave disconnecting Bluetooth');
- //   this.ble.disconnect(this.peripheral.id).then(
-   //   () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
-     // () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
-   // )
-  //}
 
   setStatus(message) {
     console.log(message);

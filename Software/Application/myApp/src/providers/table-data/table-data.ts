@@ -20,19 +20,16 @@ export class TableDataProvider {
   setTable(obj:any){
     this.data.unshift(obj);
     this.updateLocalStorage();
+    console.log("SET " + obj)
   }
 
   initGetTable() {
-    alert("INITIALIZED TABLE");
-    this.nativeStorage.getItem('clubTableStorage').then(() => {
-      data => { 
-        this.data = data.table; 
-        alert("GOT DATA" + JSON.stringify(data));
-      }
-      error => alert(error);
-    }).catch(()=>{
-      console.log("error GETTING TABLE")
-    })
+    this.nativeStorage.getItem('clubTableStorage').then(
+      data => 
+      //console.log(data.table),
+      this.data = data.table,
+      error => alert(error)
+    );
   }
 
   getTable(){
@@ -40,19 +37,23 @@ export class TableDataProvider {
   }
 
   updateLocalStorage() {
-    // this.nativeStorage.remove('clubTableStorage').then(
-    //   () => console.log("Success REMOVING"),
-    //   error => console.log(error)
-    // )
-    // .catch(()=> {
-    //   console.log("err");
-    // })
+    console.log("HERE")
     this.nativeStorage.setItem('clubTableStorage', {table: this.data}).then(
-      () => alert("Success" + JSON.stringify(this.data)),
-      error => alert(error)
+      () => console.log("Success" + JSON.stringify(this.data)),
+      error => console.log(error)
     )
     .catch(()=> {
       console.log("err");
     });
+  }
+  clear(){
+      this.data = [];
+       this.nativeStorage.remove('clubTableStorage').then(
+      () => console.log("Success REMOVING"),
+      error => console.log(error)
+    )
+    .catch(()=> {
+      console.log("err");
+     })
   }
 }

@@ -4,20 +4,23 @@ import { TableDataProvider } from '../../providers/table-data/table-data';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-table',
+  templateUrl: 'table.html'
 })
-export class ContactPage {
+export class TablePage {
   data: any[] = [];
   Club:any;
 
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public tableDataProvider: TableDataProvider) {
-
   }
 
-  ionViewWillLoad() {
-    this.data = [];
+  ionViewWillEnter() {
     this.getTable();
+  }
+  
+  remove(){
+    this.tableDataProvider.clear();
+    this.data = [];
   }
 
   //capable of filtering by club  
@@ -30,14 +33,10 @@ export class ContactPage {
       this.data = this.tableDataProvider.getTable();
   }
 
-  reverse() {
-    this.data.reverse();
-  }
-
   getClosest(distance) {
     return this.data.reduce((prev, curr) => Math.abs(curr.distance - distance) < Math.abs(prev.distance - distance) ? curr : prev);
   }
-
+//opens an alart box to show club and angle suggestions
   promptAlert() {
     let alert = this.alertCtrl.create({
       title: "Enter Distance",

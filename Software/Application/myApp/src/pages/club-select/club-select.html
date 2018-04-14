@@ -1,7 +1,7 @@
 <ion-header>
 
-  <ion-navbar color="lime">
-    <ion-title>ClubSelect</ion-title>
+  <ion-navbar color="Ygreen">
+    <ion-title>Club Select</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -12,9 +12,11 @@
     <ion-item>
         <ion-label>Club Selection</ion-label>
         <ion-select [(ngModel)]="club">
-          <ion-option value="pw">Pitching Wedge</ion-option>
-          <ion-option value="sw">Sand Wedge</ion-option>
-          <ion-option value="pt">Putter</ion-option>
+          <ion-option value="Pitching Wedge">Pitching Wedge</ion-option>
+          <ion-option value="Gap Wedge">Gap Wedge</ion-option>
+          <ion-option value="Lob Wedge">Lob Wedge</ion-option>
+          <ion-option value="Sandwedge">Sand Wedge</ion-option>
+          <ion-option value="Putter">Putter</ion-option>
         </ion-select>
       </ion-item>
       
@@ -29,6 +31,11 @@
   <button ion-button round block icon-right color="secondary" (click)="addData()">
       Submit to table
       <ion-icon name="checkmark"></ion-icon>
-  </button>
+      </button>
+      
+      <button ion-button round block icon-right color="secondary" (click)="findAngle()">
+         Add angle
+      <ion-icon name="checkmark"></ion-icon>
+      </button>
 
 </ion-content>

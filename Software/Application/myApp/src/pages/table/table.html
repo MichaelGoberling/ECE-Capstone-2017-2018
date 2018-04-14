@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="lime">
+  <ion-navbar color="Ygreen">
     <ion-title>
      Golf Data Table
     </ion-title>
@@ -8,14 +8,19 @@
 
 <ion-content>
     <ion-item>
-        <ion-label>Club Selection</ion-label>
+        <ion-label>Club Select</ion-label>
         <ion-select [(ngModel)]="club" (ionChange)="filter()">
-          <ion-option value="pw">Pitching Wedge</ion-option>
-          <ion-option value="sw">Sand Wedge</ion-option>
-          <ion-option value="pt">Putter</ion-option>
+          <ion-option value="Pitching Wedge">Pitching Wedge</ion-option>
+          <ion-option value="Gap Wedge">Gap Wedge</ion-option>
+          <ion-option value="Lob Wedge">Lob Wedge</ion-option>
+          <ion-option value="Sandwedge">Sand Wedge</ion-option>
+          <ion-option value="Putter">Putter</ion-option>
         </ion-select>
       </ion-item>
-    
+
+      <button ion-item (click)="promptAlert()">Get Club and Angle</button>
+      <button ion-item (click)="remove()">Clear table</button>
+      
       <table class="club-table">
         <tr class="table-head">
             <th>Distance</th>
@@ -28,6 +33,6 @@
             <td>{{item.angle}}</td>
         </tr>
       </table>
-      <button ion-item (click)="promptAlert()">Get Club and Angle</button>
+      
 </ion-content>
 
