@@ -14,6 +14,8 @@ import { ClubSelectPage } from '../pages/club-select/club-select';
 import { DeviceProvider } from '../providers/device/device';
 import { TableDataProvider } from '../providers/table-data/table-data';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { EmojiPickerModule } from '@ionic-tools/emoji-picker';
+
 
 //Whenever you want to make new pages they need to go into here as well
 @NgModule({

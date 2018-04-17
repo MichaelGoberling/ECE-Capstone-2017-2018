@@ -23,19 +23,13 @@
   <ion-item>
     <ion-input autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Distance" [(ngModel)]="distance"></ion-input>
   </ion-item>
-  
-  <ion-item>
-    <ion-input autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Angle" [(ngModel)]="angle"></ion-input>
-  </ion-item>
 
-  <button ion-button round block icon-right color="secondary" (click)="addData()">
-      Submit to table
+  <button ion-button round block icon-right color="secondary" (click)="startSession()" *ngIf="!sessionStart">
+      Start Session
       <ion-icon name="checkmark"></ion-icon>
       </button>
-      
-      <button ion-button round block icon-right color="secondary" (click)="findAngle()">
-         Add angle
+  <button ion-button round block icon-right color="danger" (click)="startSession()" *ngIf="sessionStart">
+      End Session
       <ion-icon name="checkmark"></ion-icon>
-      </button>
-
+    </button>
 </ion-content>

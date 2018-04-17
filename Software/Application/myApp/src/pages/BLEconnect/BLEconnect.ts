@@ -8,8 +8,8 @@ import { AlertController } from 'ionic-angular';
 })
 export class BLEconnectPage {
 
-  unpairedDevices: any;
-  pairedDevices: any;
+  unpairedDevices: any = [];
+  pairedDevices: any = [];
   gettingDevices: Boolean;
   constructor(private bluetoothSerial: BluetoothSerial, private alertCtrl: AlertController) {
     bluetoothSerial.enable();
@@ -17,8 +17,8 @@ export class BLEconnectPage {
 
   
   startScanning() {
-    this.pairedDevices = null;
-    this.unpairedDevices = null;
+    this.pairedDevices = [];
+    this.unpairedDevices = [];
     this.gettingDevices = true;
     //this.bluetoothSerial.setDeviceDiscoveredListener();
     
@@ -41,10 +41,11 @@ export class BLEconnectPage {
 
       })
   }
+
   success = (data) => alert(data);
   fail = (error) => alert(error);
 
-  selectDevice(address: any) {
+  selectDevice(address: any, i: any) {
     let alert = this.alertCtrl.create({
       title: 'Connect',
       message: 'Do you want to connect with?',
@@ -59,7 +60,16 @@ export class BLEconnectPage {
         {
           text: 'Connect',
           handler: () => {
-            this.bluetoothSerial.connect(address).subscribe(this.success, this.fail);
+            this.bluetoothSerial.connect(address).subscribe((res) => {
+
+            });
+            this.bluetoothSerial.list().then((success) => {
+              this.pairedDevices = success;
+              this.gettingDevices = false;
+            },
+              (err) => {
+        
+              })
           }
         }
       ]
@@ -68,7 +78,7 @@ export class BLEconnectPage {
 
   }
   
-  disconnect() {
+  disconnect(i: any) {
     let alert = this.alertCtrl.create({
       title: 'Disconnect?',
       message: 'Do you want to Disconnect?',
@@ -84,6 +94,9 @@ export class BLEconnectPage {
           text: 'Disconnect',
           handler: () => {
             this.bluetoothSerial.disconnect();
+            let device = this.pairedDevices.indexOf(i);
+            this.unpairedDevices.push(device);
+            this.pairedDevices.splice(i, 1);
           }
         }
       ]

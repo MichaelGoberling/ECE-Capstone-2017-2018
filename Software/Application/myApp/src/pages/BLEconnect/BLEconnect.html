@@ -10,15 +10,15 @@
   <ion-list-header>
     Paired Devices
   </ion-list-header>
-  <ion-item *ngFor="let device of pairedDevices">
+  <ion-item *ngFor="let device of pairedDevices; let i = index" >
     {{device.name}}
   </ion-item>
-  <button ion-button block (click)="disconnect()">Disconnect</button>
+  <button ion-button block (click)="disconnect(i)">Disconnect</button>
   <ion-list-header>
     availlable Devices
   </ion-list-header>
-  <ion-item *ngFor='let device of unpairedDevices'>
-    <span (click)="selectDevice(device.address)">
+  <ion-item *ngFor='let device of unpairedDevices; let i = index' >
+    <span (click)="selectDevice(device.address, i)">
       {{device.name}}
     </span>
   </ion-item>
