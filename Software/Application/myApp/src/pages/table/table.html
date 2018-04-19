@@ -7,18 +7,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-item>
-        <ion-label>Club Select</ion-label>
-        <ion-select [(ngModel)]="club" (ionChange)="filter()">
-          <ion-option value="Pitching Wedge">Pitching Wedge</ion-option>
-          <ion-option value="Gap Wedge">Gap Wedge</ion-option>
-          <ion-option value="Lob Wedge">Lob Wedge</ion-option>
-          <ion-option value="Sandwedge">Sand Wedge</ion-option>
-          <ion-option value="Putter">Putter</ion-option>
-        </ion-select>
-      </ion-item>
 
-      <button ion-item (click)="promptAlert()">Get Club and Angle</button>
       <button ion-item (click)="remove()">Clear table</button>
       
       <table class="club-table">
@@ -26,11 +15,13 @@
             <th>Distance</th>
             <th>Club</th> 
             <th>Angle</th>
+            <th>Quality</th>
         </tr>
         <tr class="table-rows" *ngFor="let item of data">
             <td>{{item.distance}}</td>
             <td>{{item.club}}</td> 
             <td>{{item.angle}}</td>
+            <td>{{item.quality}}</td>
         </tr>
       </table>
       
