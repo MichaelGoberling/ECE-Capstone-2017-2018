@@ -1,27 +1,21 @@
 <ion-header>
-<ion-navbar color="Ygreen">
-  <ion-title>Bluetooth Connect Page</ion-title>
-</ion-navbar>
-</ion-header>
-
-<ion-content padding>
-<ion-list padding>
-  <button ion-button block (click)="startScanning()">scan</button>
-  <ion-list-header>
-    Paired Devices
-  </ion-list-header>
-  <ion-item *ngFor="let device of pairedDevices; let i = index" >
-    {{device.name}}
-  </ion-item>
-  <button ion-button block (click)="disconnect(i)">Disconnect</button>
-  <ion-list-header>
-    availlable Devices
-  </ion-list-header>
-  <ion-item *ngFor='let device of unpairedDevices; let i = index' >
-    <span (click)="selectDevice(device.address, i)">
-      {{device.name}}
-    </span>
-  </ion-item>
-  <ion-spinner name="crescent" *ngIf="gettingDevices"></ion-spinner>
-</ion-list>
-</ion-content>
+    <ion-navbar color="Ygreen">
+      <ion-title>Bluetooth Connect Page</ion-title>
+    </ion-navbar>
+    </ion-header>
+    
+    <ion-content padding>
+    <ion-list padding>
+      <button ion-button block (click)="startScanning()">scan</button>
+      <ion-list-header>
+        Devices
+      </ion-list-header>
+      <ion-item *ngFor='let device of unpairedDevices; let i = index' >
+          <span (click)="selectDevice(device.address, i)">
+          {{device.name}}
+          </span>
+      </ion-item>
+      <ion-spinner name="crescent" *ngIf="gettingDevices"></ion-spinner>
+    </ion-list>
+    <button ion-button block (click)="disconnect(i)">Disconnect</button>
+    </ion-content>

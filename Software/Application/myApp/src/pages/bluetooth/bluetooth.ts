@@ -71,7 +71,7 @@ export class BluetoothPage {
       subTitle: message,
       buttons: ['OK']
     });
-    alert.present();
+    //alert.present();
   }
 
   onDeviceDisconnected(peripheral) {

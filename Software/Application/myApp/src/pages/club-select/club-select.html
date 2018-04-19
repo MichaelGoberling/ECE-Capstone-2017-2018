@@ -24,7 +24,7 @@
     <ion-input autocomplete="on" autocorrect="on" spellcheck="on" type="text" placeholder="Distance" [(ngModel)]="distance"></ion-input>
   </ion-item>
 
-  <button ion-button round block icon-right color="secondary" (click)="startSession()" *ngIf="!sessionStart">
+  <button ion-button round block icon-right color="secondary" (click)="startSession(); sendAngle();" *ngIf="!sessionStart">
       Start Session
       <ion-icon name="checkmark"></ion-icon>
       </button>
@@ -33,3 +33,5 @@
       <ion-icon name="checkmark"></ion-icon>
     </button>
 </ion-content>
+
+
