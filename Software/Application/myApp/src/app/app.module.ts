@@ -15,7 +15,7 @@ import { DeviceProvider } from '../providers/device/device';
 import { TableDataProvider } from '../providers/table-data/table-data';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { EmojiPickerModule } from '@ionic-tools/emoji-picker';
-
+import { Insomnia } from '@ionic-native/insomnia';
 
 //Whenever you want to make new pages they need to go into here as well
 @NgModule({
@@ -44,6 +44,7 @@ import { EmojiPickerModule } from '@ionic-tools/emoji-picker';
     StatusBar,
     SplashScreen,
     BLE,
+    Insomnia,
     BluetoothSerial,
     NativeStorage,
     DeviceProvider,
